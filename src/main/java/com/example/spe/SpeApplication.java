@@ -75,19 +75,19 @@ public class SpeApplication {
 		scanner.close();
 	}
 
-	private static double add(double num1, double num2) {
+	 static double add(double num1, double num2) {
 		return num1 + num2;
 	}
 
-	private static double subtract(double num1, double num2) {
+	 static double subtract(double num1, double num2) {
 		return num1 - num2;
 	}
 
-	private static double multiply(double num1, double num2) {
+	 static double multiply(double num1, double num2) {
 		return num1 * num2;
 	}
 
-	private static double divide(double num1, double num2) {
+	static double divide(double num1, double num2) {
 		if (num2 != 0) {
 			return num1 / num2;
 		} else {
@@ -96,15 +96,15 @@ public class SpeApplication {
 		}
 	}
 
-	private static double squareRoot(double num) {
+	 static double squareRoot(double num) {
 		return Math.sqrt(num);
 	}
 
-	private static double naturalLog(double num) {
+	 static double naturalLog(double num) {
 		return Math.log(num);
 	}
 
-	private static int factorial(int num) {
+	 static int factorial(int num) {
 		if (num == 0 || num == 1) {
 			return 1;
 		} else {

@@ -38,11 +38,15 @@ pipeline {
                 }
             }
         }
-        stage('Delete Docker Image from Local'){
-                steps {
-                    sh 'docker rmi vivekmaltare/spe_mini_project'
+        stage('Stop and Remove Existing Container') {
+                    steps {
+                        script {
+                            // Stop and remove existing container if it exists
+                            sh 'docker rm -f JavaCalculator || true'
+                        }
+                    }
                 }
-            }
+
          stage('Run Ansible Playbook') {
             steps {
                 script {

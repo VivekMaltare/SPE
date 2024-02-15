@@ -42,6 +42,7 @@ pipeline {
                     steps {
                         script {
                             // Stop and remove existing container if it exists
+                             sh 'docker stop JavaContainer || true'
                             sh 'docker rm -f JavaCalculator || true'
                         }
                     }

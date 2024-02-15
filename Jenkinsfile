@@ -38,6 +38,11 @@ pipeline {
                 }
             }
         }
+        stage('Delete Docker Image from Local'){
+                steps {
+                    sh 'docker rmi vivekmaltare/spe_mini_project'
+                }
+            }
          stage('Run Ansible Playbook') {
             steps {
                 script {

@@ -12,7 +12,7 @@ public class SpeApplication {
 		Scanner scanner = new Scanner(System.in);
 
 		while (true) {
-			//this is an advancecd calculator
+			//this is an advancecd calculator alsoooooo
 			System.out.println("Advanced Calculator");
 			System.out.println("1. Addition");
 			System.out.println("2. Subtraction");

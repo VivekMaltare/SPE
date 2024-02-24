@@ -1,16 +1,18 @@
 package com.example.spe;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Scanner;
 @SpringBootApplication
 public class SpeApplication {
-
+	private static final Logger logger = LogManager.getLogger(SpeApplication.class);
 	public static void main(String[] args) {
 		SpringApplication.run(SpeApplication.class, args);
 		Scanner scanner = new Scanner(System.in);
 
 		while (true) {
+			//this is an advancecd calculator
 			System.out.println("Advanced Calculator");
 			System.out.println("1. Addition");
 			System.out.println("2. Subtraction");
@@ -105,10 +107,10 @@ public class SpeApplication {
 	}
 
 	 static int factorial(int num) {
-		if (num == 0 || num == 1) {
-			return 1;
-		} else {
-			return num * factorial(num - 1);
-		}
-	}
+		 if (num == 0 || num == 1) {
+			 return 1;
+		 } else {
+			 return num * factorial(num - 1);
+		 }
+	 }
 }

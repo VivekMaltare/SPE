@@ -41,7 +41,7 @@ pipeline {
                    // Stop and remove existing container if it exists
                    sh 'docker stop JavaCalculator || true'
                    sh 'docker rm -f JavaCalculator || true'
-                   sh 'docker rmi -f vivekmaltare/spe_mini_project || true'
+                   sh 'docker rmi -f vivekmaltare/spe_mini_project:latest || true'
                }
            }
        }

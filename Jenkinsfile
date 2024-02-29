@@ -35,13 +35,6 @@ pipeline {
                 }
             }
         }
-        stage('Remove Local Docker Image') {
-            steps {
-                script {
-                        sh 'docker rmi vivekmaltare/spe_mini_project'
-                }
-            }
-        }
         stage('Stop and Remove Existing Container') {
                     steps {
                         script {
@@ -52,7 +45,7 @@ pipeline {
                     }
                 }
 
-         stage('Run Ansible Playbook') {
+        stage('Run Ansible Playbook') {
             steps {
                 script {
                     ansiblePlaybook(
@@ -61,6 +54,13 @@ pipeline {
                      )
                 }
             }
+        }
+        stage('Remove Local Docker Image') {
+             steps {
+                 script {
+                         sh 'docker rmi vivekmaltare/spe_mini_project'
+                 }
+             }
         }
     }
 }

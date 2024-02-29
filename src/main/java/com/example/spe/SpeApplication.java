@@ -21,12 +21,13 @@ public class SpeApplication {
 			System.out.println("5. Square Root");
 			System.out.println("6. Natural Logarithm");
 			System.out.println("7. Factorial");
-			System.out.println("8. Exit");
+			System.out.println("8. Power");
+			System.out.println("9. Exit");
 
 			System.out.print("Enter your choice (1-8): ");
 			int choice = scanner.nextInt();
 
-			if (choice == 8) {
+			if (choice == 9) {
 				System.out.println("Exiting the calculator. Goodbye!");
 				break;
 			}
@@ -66,6 +67,11 @@ public class SpeApplication {
 				case 7:
 					result = factorial((int) num1);
 					break;
+				case 8:
+					System.out.print("Enter the second number: ");
+					num2 = scanner.nextDouble();
+					result = power(num1,num2);
+					break;
 				default:
 					System.out.println("Invalid choice. Please enter a number between 1 and 8.");
 					continue;
@@ -98,19 +104,35 @@ public class SpeApplication {
 		}
 	}
 
-	 static double squareRoot(double num) {
-		return Math.sqrt(num);
+	static double squareRoot(double num) {
+		if (num >= 0) {
+			return Math.sqrt(num);
+		} else {
+			System.out.println("Cannot find square root of a negative number.");
+			return Double.NaN; // Return NaN for invalid input
+		}
 	}
 
-	 static double naturalLog(double num) {
-		return Math.log(num);
+	static double naturalLog(double num) {
+		if (num > 0) {
+			return Math.log(num);
+		} else {
+			System.out.println("Natural logarithm is not defined for negative or zero numbers.");
+			return Double.NaN; // Return NaN for invalid input
+		}
 	}
 
-	 static int factorial(int num) {
-		 if (num == 0 || num == 1) {
-			 return 1;
-		 } else {
-			 return num * factorial(num - 1);
-		 }
-	 }
+	static int factorial(int num) {
+		if (num < 0) {
+			System.out.println("Factorial is not defined for negative numbers.");
+			return -1; // Return -1 for invalid input
+		} else if (num == 0 || num == 1) {
+			return 1;
+		} else {
+			return num * factorial(num - 1);
+		}
+	}
+	static double power(double base, double exponent) {
+		return Math.pow(base, exponent);
+	}
 }

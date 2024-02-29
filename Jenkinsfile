@@ -18,8 +18,6 @@ pipeline {
                 }
             }
         }
-
-
         stage('Build docker image') {
             steps {
                 script {
@@ -27,7 +25,6 @@ pipeline {
                 }
             }
         }
-
         stage('Push Docker image') {
             steps {
                 script {
@@ -35,6 +32,13 @@ pipeline {
                         sh 'docker login -u vivekmaltare -p ${Binding}'
                     }
                     sh 'docker push vivekmaltare/spe_mini_project'
+                }
+            }
+        }
+        stage('Remove Local Docker Image') {
+            steps {
+                script {
+                        sh 'docker rmi vivekmaltare/spe_mini_project'
                 }
             }
         }

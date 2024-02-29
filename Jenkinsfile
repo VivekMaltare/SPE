@@ -48,7 +48,7 @@ pipeline {
            steps {
                script {
                    // Remove the old image
-                   sh 'docker rmi -f vivekmaltare/spe_mini_project:latest || true'
+                   sh 'docker image prune -f'
                }
            }
        }

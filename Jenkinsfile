@@ -35,13 +35,20 @@ pipeline {
                 }
             }
         }
-       stage('Stop and Remove Existing Container And Its Image') {
+       stage('Stop and Remove Existing Container') {
            steps {
                script {
                    // Stop and remove existing container if it exists
                    sh 'docker stop JavaCalculator || true'
                    sh 'docker rm -f JavaCalculator || true'
-                   sh 'docker rmi -f vivekmaltare/spe_mini_project:latest || true'
+               }
+           }
+       }
+       stage('Remove Old Image') {
+           steps {
+               script {
+                   // Remove the old image
+                   sh 'docker rmi -f vivekmaltare/spe_mini_project || true'
                }
            }
        }

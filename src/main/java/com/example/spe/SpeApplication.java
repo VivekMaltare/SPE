@@ -24,7 +24,7 @@ public class SpeApplication {
 			System.out.println("8. Power");
 			System.out.println("9. Exit");
 
-			System.out.print("Enter your choice (1-8): ");
+			System.out.print("Enter your choice (1-9): ");
 			int choice = scanner.nextInt();
 
 			if (choice == 9) {

@@ -35,19 +35,18 @@ pipeline {
                 }
             }
         }
-       stage('Stop and Remove Existing Container and its Image') {
+       stage('Stop and Remove Existing Container') {
            steps {
                script {
                    // Stop and remove existing container if it exists
-                   sh 'docker stop JavaContainer || true'
-                   sh 'docker rm -f JavaContainer || true'
+                   sh 'docker stop JavaCalculator || true'
+                   sh 'docker rm -f JavaCalculator || true'
 
                    // Remove the container image
                    sh 'docker rmi -f vivekmaltare/spe_mini_project || true'
                }
            }
        }
-
         stage('Run Ansible Playbook') {
             steps {
                 script {
